@@ -4,6 +4,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <title>마진과 패딩</title>
 <style type="text/css">
+* {margin: 0; padding: 0;}
+
 body {
 	font-family: "돋움", "맑은 고딕";
 	font-size: 0.8em;
@@ -14,12 +16,54 @@ body {
 	border: 1px solid #666;
 	width: 300px;
 	background-color: #FFC;
+	cursor: pointer;
+
+	padding-top: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+
+	padding: 10px 20px 30px 40px; /* Top Right Bottom Left */
+	padding: 10px 20px 30px; /* Top (Right, Left) Bottom */	
+	padding: 10px 20px; /* (Top, Bottom) (Right, Left) */
+	padding: 10px; /* (Top, Right, Bottom, Left) */
+
+	margin-top: 100px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	margin-left: 300px;
+
+	margin: 100px; /* (Top, Right, Bottom, Left) */
+	margin: 100px auto; /* (Top, Bottom) (Right, Left) */
+	margin: 100px auto 300px; /* Top (Right, Left) Bottom */
+	margin: 100px auto 300px auto; /* Top Right Bottom Left */
 }
+
 </style>
+<script>
+window.onload = function() {
+	let elDev = document.getElementById("box")
+	let marginTop = parseInt(window.getComputedStyle(document.querySelector('#box')).marginTop);
+
+	elDev.onclick = function() {
+		console.log(marginTop);
+		let intervalId = setInterval(() => {
+			// clearInterval(intervalId);
+			if(marginTop == -80) {
+				clearInterval(intervalId);
+				return ;
+			}
+			marginTop -= 10;
+			elDev.style.marginTop = marginTop + "px";
+			console.log("marginTop");
+		}, 50);
+	}
+}
+</script>
 </head>
 
 <body>
-	<div class="box1">
+	<div class="box1" id="box">
 		CSS에서 가장 보편적이고 많이 사용하는 마진과 패딩에 대한 값이 어떻게 적용되는지 확인해 보겠습니다.
 	</div>
 </body>
