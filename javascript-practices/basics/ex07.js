@@ -4,6 +4,7 @@
 var myFunction = function() { console.log('일반함수')};
 
 myFunction();
+
 /* 생성자 함수(실행코드[객체 초기화] 블록이 있는 객체, 관례에 따라 대문자) */
 var MyObject = function(name, age) {
     this.name = name;
