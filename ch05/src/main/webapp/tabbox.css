@@ -1,0 +1,8 @@
+*						{ margin:0; padding:0 }
+body					{ font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
+
+.tab-box                { display: flex; flex-flow: column nowrap; justify-content: center; align-items: center; border: 1px solid salmon; height: 300px;}
+ul, ol                  { display: flex; flex-flow: row wrap; list-style: none; }
+li                      { text-align: center; width: 100px; margin: 0 1px; border: 1px solid #999; background-color: #999; height: 22px; line-height: 22px; border-radius: 10px 10px 0 0; cursor: pointer;}
+.tab-box div            { height: 200px; border: 1px solid #999; width: 516px; text-align: center; line-height: 200px;}
+.selected               { background-color: sandybrown;}

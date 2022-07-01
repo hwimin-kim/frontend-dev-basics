@@ -3,51 +3,10 @@
 <head>
 <meta charset="utf-8">
 <title>리스트를 이용한 메뉴 만들기</title>
-<style type="text/css">
-*						{ margin:0; padding:0 }
-body					{ font-family: '맑은 고딕' 돋움; font-size:0.75em; color:#333 }
-
-.tab-box                { display: flex; flex-flow: column nowrap; justify-content: center; align-items: center; border: 1px solid salmon; height: 300px;}
-ul, ol                  { display: flex; flex-flow: row wrap; list-style: none; }
-li                      { text-align: center; width: 100px; margin: 0 1px; border: 1px solid #999; background-color: #999; height: 22px; line-height: 22px; border-radius: 10px 10px 0 0; cursor: pointer;}
-.tab-box div            { height: 200px; border: 1px solid #999; width: 516px; text-align: center; line-height: 200px;}
-.selected               { background-color: sandybrown;}
-</style>
+<link rel="stylesheet" type="text/css" href="tabbox.css">
+<script src="tabbox.js"></script>
 <script>
-    /*  
-        DOM Event Model1 Level0: basic: HTML Element의 
-        Event Attribute에 Event Handler(함수)를 설정 하는 방식
-        JavaScript Code(DOM API)로만 작성하기
-    */
-    let liSelected = null;
-    // let onTabClicked = () => {
-    //     // unselect
-    //     if(liSelected != null)
-    //         liSelected.className = '';
-
-    //     // select
-    //     this.className = 'selected'
-    //     liSelected = this;
-    // }
-
-    let onTabClicked = function () {
-	if(liSelected != null) {
-		// unselect
-		liSelected.className = '';
-	}
-	
-	// select
-	this.className = 'selected';
-	liSelected = this;
-}
-
-    window.onload = function() {
-        document.getElementById("tab01").onclick = onTabClicked;
-	    document.getElementById("tab02").onclick = onTabClicked;
-	    document.getElementById("tab03").onclick = onTabClicked;
-	    document.getElementById("tab04").onclick = onTabClicked;
-	    document.getElementById("tab05").onclick = onTabClicked;
-    }
+    tabBox.init();
 </script>
 </head>
 <body>
@@ -60,7 +19,7 @@ li                      { text-align: center; width: 100px; margin: 0 1px; borde
         <li id="tab05">메뉴 5</li>
     </ul>
     <div>
-    	탭뷰입니다.
+        탭뷰입니다.
     </div>
 </div>    
 </body>
