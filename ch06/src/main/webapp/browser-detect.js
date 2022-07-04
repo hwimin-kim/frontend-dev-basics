@@ -79,7 +79,7 @@ var BrowserDetect = {
 				string: navigator.userAgent,
 				subString: "iPhone",
 				identity: "iPhone/iPod"
-		    },
+			},
 			{
 				string: navigator.platform,
 				subString: "Linux",
