@@ -15,4 +15,4 @@
 - XmlHttpRequest(ajax)
 
 ### 7. ch07: Browser Programing with jQuery
-### 8. ch08: AJAX wiht jQuery
+### 8. ch08: AJAX with jQuery
