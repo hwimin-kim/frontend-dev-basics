@@ -3,6 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	window.addEventListener("load", function () {
+		var imgElement = document.createElement("img");
+
+		//	setAttribute/getAttribute 사용
+		//	표준 Attribute <=> property		(o)
+		imgElement.setAttribute('src', "https://img.insight.co.kr/static/2021/07/01/700/img_20210701112651_hj3agu8f.webp");
+		imgElement.setAttribute('style', 'width: 400px');
+		imgElement.setAttribute('alt', '심슨!');
+		
+		//	왜 property가 되지 않지?
+		imgElement.setAttribute('data-no', 10);	// 비표준 attribute, property(x)
+
+		//	property =>	표준 Attribute		(o)
+		imgElement['title']  = '심슨네가족들';
+
+		//	property =>	비표준 Attribute	(x)
+		imgElement['no'] = 10; 				// property
+
+		setTimeout(() => {
+			document.body.appendChild(imgElement);
+			console.log(imgElement['no'], imgElement.getAttribute('no'));
+			console.log(imgElement['data-no'], imgElement.getAttribute('data-no'));
+		}, 3000);
+	});
+</script>
 </head>
 <body>
 	<h1>DOM(Document Object Model)</h1>

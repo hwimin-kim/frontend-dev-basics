@@ -3,6 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script>
+	window.addEventListener("load", function() {
+		var imgElement = document.createElement("img");
+		imgElement.src="https://img.insight.co.kr/static/2021/07/01/700/img_20210701112651_hj3agu8f.webp";
+		imgElement.style.width = "200px";
+		imgElement.alt = '심슨!';
+		imgElement.title = '심슨네가족들';
+
+		setTimeout(() => {
+			document.body.appendChild(imgElement);
+		}, 3000);
+	});
+</script>
 </head>
 <body>
 	<h1 id='h' data-no='10'>DOM(Document Object Model)</h1>
