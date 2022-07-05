@@ -19,7 +19,6 @@ var tabBox = {
     },
     _onWindowLoad: function() {
         var $liTabs = $('.tab-box > ul > li');
-        console.log($liTabs);
         for(var i = 0; i < $liTabs.length; i++)
             $liTabs[i].addEventListener('click', this._onTabClicked);
     }
