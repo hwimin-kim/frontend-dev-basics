@@ -18,8 +18,8 @@ var tabBox = {
         $(this).addClass('selected');
     },
     _onWindowLoad: function() {
-        var $liTabs = $('.tab-box > ul > li');
-        for(var i = 0; i < $liTabs.length; i++)
-            $liTabs[i].addEventListener('click', this._onTabClicked);
+        // var $liTabs = $('.tab-box > ul > li');
+        var $liTabs = $('.tab-box').children('ul').children('li');
+        $liTabs.click(this._onTabClicked);
     }
 }
