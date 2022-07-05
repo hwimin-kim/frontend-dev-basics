@@ -21,7 +21,7 @@ window.addEventListener('load', function() {
 	document
 		.getElementById('inner-div')
 		.addEventListener('click', function(e) {
-			var event = e || window.event;	/* <= ie8 */
+			var event = e || window.event;						/* <= ie8 */
 
 			//	stop propagation(bubbling)
 			event.cancelBubble = true; 							/* <= ie8 */
