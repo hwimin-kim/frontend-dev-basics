@@ -42,7 +42,7 @@ console.log(o3);
 
 /*
 생성방법3
-(J)avaScript (O)bject (N)otation
+(J)ava(S)cript (O)bject (N)otation
 */
 var o4 = {
     name : '둘리',
