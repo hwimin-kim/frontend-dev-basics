@@ -7,7 +7,13 @@
 <script src='https://code.jquery.com/jquery-3.6.0.min.js'></script>
 <script src="tabbox03.js"></script>
 <script>
-tabBox.init();
+// tabBox.init();
+$(function() {
+    $('.tab-box ul li').click(function() {
+        $('.tab-box ul li.selected').removeClass('selected');
+        $(this).addClass('selected');
+    });
+});
 </script>
 </head>
 <body>
