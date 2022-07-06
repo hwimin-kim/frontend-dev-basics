@@ -1,8 +1,10 @@
 package com.douzone.ch08.controller.api;
 
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.douzone.ch08.dto.JSONResult;
 import com.douzone.ch08.vo.GuestbookVo;
 
 @RestController
@@ -19,13 +21,14 @@ public class ApiController {
 		return "<h1>AJAX연습</h1><p>HTML 데이터</p>";
 	}
 	
-	@RequestMapping("/json")
-	public Object json() {
+	@GetMapping("/json")
+	public JSONResult json() {
 		GuestbookVo vo = new GuestbookVo();
 		vo.setNo(1L);
 		vo.setName("둘리");
 		vo.setMessage("호잇~");
 		
-		return vo;
+		return JSONResult.success(vo);
+		//return JSONResult.fail("error....");
 	}
 }
