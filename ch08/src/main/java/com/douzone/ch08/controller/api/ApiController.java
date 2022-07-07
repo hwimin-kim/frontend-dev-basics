@@ -1,6 +1,8 @@
 package com.douzone.ch08.controller.api;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -11,12 +13,12 @@ import com.douzone.ch08.vo.GuestbookVo;
 @RequestMapping("/api")
 public class ApiController {
 	
-	@RequestMapping("/text")
+	@GetMapping("/text")
 	public String text() {
 		return "Text 데이타";
 	}
 	
-	@RequestMapping("/html")
+	@GetMapping("/html")
 	public String html() {
 		return "<h1>AJAX연습</h1><p>HTML 데이터</p>";
 	}
@@ -30,5 +32,21 @@ public class ApiController {
 		
 		return JSONResult.success(vo);
 		//return JSONResult.fail("error....");
+	}
+	
+	@PostMapping("/post01")
+	public JSONResult post01(GuestbookVo vo) {
+		System.out.println(vo);
+		
+		// service -> repository: DB insert 성공 후,
+		
+		vo.setNo(1L);
+		return JSONResult.success(vo);
+	}
+	
+	@PostMapping("/post02")
+	public JSONResult post02(@RequestBody GuestbookVo vo) {		
+		vo.setNo(2L);
+		return JSONResult.success(vo);
 	}
 }
