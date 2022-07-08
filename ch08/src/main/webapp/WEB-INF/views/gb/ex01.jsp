@@ -8,7 +8,48 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript" src='${pageContext.request.contextPath}/jquery/jquery-3.6.0.js'></script>
-<script type="text/javascript"></script>
+<script>
+var render = function(vo, mode) {
+	var htmls = 
+		"<li data-no=''>"+
+		"<strong>" + vo.name + "</strong>" +
+		"<p>" + vo.message + "</p>" +
+		"<strong></strong>" +
+		"<a href='' data-no='"+ vo.no +"'>삭제</a>" +
+		"</li>";
+		
+		$('#list-guestbook')[mode ? "append" : "prepend"](htmls);
+}
+$(function() {
+		$("#add-form").submit(function(event) {
+				event.preventDefault();
+				/* validation */
+				
+				var vo  = {};
+				vo.name = $("#input-name").val();
+				vo.password = $("#input-password").val();
+				vo.message = $("#tx-content").val();
+				
+				console.log(vo);
+				
+				$.ajax({
+						url:	'${pageContext.request.contextPath}/api/guestbook',
+						type:	'post',
+						dataType:	'json',
+						contentType:	'application/json',
+						data:	JSON.stringify(vo),
+						success:	function(response) {
+							if(response.result !== 'success') {
+									console.error(response.message)
+							}
+							
+							render(response.data, false);
+
+						}
+				});
+		});
+});
+</script>
 </head>
 <body>
 		<div id="guestbook">
