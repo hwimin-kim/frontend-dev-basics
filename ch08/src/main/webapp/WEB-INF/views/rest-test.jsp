@@ -62,6 +62,20 @@ $(function () {
 		
 	});
 	
+	$('#delete').click(function() {	
+		$.ajax({
+			url:'${pageContext.request.contextPath}/api/user/10',
+			type: 'delete',
+			dataType: 'json',
+			contentType: 'application/x-www-form-urlencoded',
+			data: "password=1234",
+			success: function(response) {
+				console.log(response);
+			}
+		});
+		
+	});
+	
 });
 </script>
 </head>
