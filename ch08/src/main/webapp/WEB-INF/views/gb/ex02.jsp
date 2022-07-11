@@ -9,17 +9,22 @@
 <title>Insert title here</title>
 <script type="text/javascript" src='${pageContext.request.contextPath}/jquery/jquery-3.6.0.js'></script>
 <script>
-var render = function(vo, mode) {
-	var htmls = 
-		"<li data-no=''>"+
-		"<strong>" + vo.name + "</strong>" +
-		"<p>" + vo.message + "</p>" +
-		"<strong></strong>" +
-		"<a href='' data-no='"+ vo.no +"'>삭제</a>" +
-		"</li>";
-		
-		$('#list-guestbook')[mode ? "append" : "prepend"](htmls);
-}
+/*
+1.	scroll event는 ch07/ex36.html 참고
+2.	/api/guestbook?sno=10: sno 보다 작은 row를 top-k(limit 0, k) 구현 할 것
+3.	delete ~~~
+ */
+ var render = function(vo, mode) {
+		var htmls = 
+			"<li data-no='" + vo.no + "'>"+
+			"<strong>" + vo.name + "</strong>" +
+			"<p>" + vo.message + "</p>" +
+			"<strong></strong>" +
+			"<a href='' data-no='"+ vo.no +"'>삭제</a>" +
+			"</li>";
+			
+			$('#list-guestbook')[mode ? "append" : "prepend"](htmls);
+	}
 
 var fetch = function() {
 		$.ajax({

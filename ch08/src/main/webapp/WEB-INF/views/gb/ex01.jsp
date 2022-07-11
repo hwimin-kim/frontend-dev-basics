@@ -11,7 +11,7 @@
 <script>
 var render = function(vo, mode) {
 	var htmls = 
-		"<li data-no=''>"+
+		"<li data-no='" + vo.no + "'>"+
 		"<strong>" + vo.name + "</strong>" +
 		"<p>" + vo.message + "</p>" +
 		"<strong></strong>" +
